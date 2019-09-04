@@ -40,8 +40,8 @@ function buildScss() {
         .pipe(gulpif(env === 'development', sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
-            browsers: ['last 5 versions'],
-            cascade: false
+            // browsers: ['last 5 versions'],
+            // cascade: false
         }))
         .pipe(cleanCSS())
         .pipe(gulpif(env === 'development', sourcemaps.write()))

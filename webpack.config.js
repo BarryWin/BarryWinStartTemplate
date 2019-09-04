@@ -4,8 +4,8 @@ const path = require('path');
 
 module.exports = {
     //export NODE_ENV=development
-    mode: process.env.NODE_ENV ? process.env.NODE_ENV : 'development',
-    devtool: 'inline-source-map',
+    // mode: process.env.NODE_ENV ? process.env.NODE_ENV : 'development',
+    // devtool: 'inline-source-map',
     module: {
         rules: [
             // {

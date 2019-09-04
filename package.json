@@ -5,8 +5,12 @@
   "repository": "ssh://git@gitea.websm.io:2222/SlavaVlasov/carcash.shop.git",
   "author": "SlavaVLasov <slavon.v21@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development gulp",
+    "prod": "cross-env NODE_ENV=production gulp"
+  },
   "browserslist": [
-    "last 5 version",
+    "last 10 version",
     "> 1%"
   ],
   "dependencies": {
@@ -26,14 +30,18 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "imagemin-mozjpeg": "^8.0.0",
+    "swiper": "^4.5.0",
     "vinyl-named": "^1.1.0",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
+    "webpack-merge": "^4.2.1",
     "webpack-stream": "^5.2.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.5.5",
+    "@fortawesome/fontawesome-free": "^5.10.1",
     "babel-loader": "^8.0.6",
+    "cross-env": "^5.2.0",
     "file-loader": "^4.2.0",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.2.0",
