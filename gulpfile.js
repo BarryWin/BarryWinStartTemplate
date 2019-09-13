@@ -40,6 +40,7 @@ function buildScss() {
         .pipe(gulpif(env === 'development', sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
+            grid: true,
             // browsers: ['last 5 versions'],
             // cascade: false
         }))
@@ -110,7 +111,7 @@ function reload(cb) {
 // exports.clear = clear;
 
 function watcher() {
-    watch('./src/templates/*.pug', series(buildPug, reload));
+    watch('./src/templates/**/*.pug', series(buildPug, reload));
     watch('./src/scss/**/*.scss', series(buildScss, reload));
     watch('./src/js/**/*.js', series(buildJs, reload));
     watch('./src/images/**/*', series(buildImages, reload));
