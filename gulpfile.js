@@ -21,7 +21,33 @@ const gulpif = require('gulp-if');
 const del = require('del');
 const browserSync = require('browser-sync');
 
+const iconfont = require('gulp-iconfont');
+const iconfontCss = require('gulp-iconfont-css');
+const runTimestamp = Math.round(Date.now()/1000);
+
 let env = process.env.NODE_ENV;
+
+let fontName = 'icons';
+
+function iconFonts() {
+    return src(['src/images/iconsFont/*.svg']) // Source folder containing the SVG images
+        .pipe(iconfontCss({
+            fontName: fontName,
+            path: './src/images/iconsFont/icons.css',
+            targetPath: 'icons.css',
+            fontPath: './'
+        }))
+        .pipe(iconfont({
+            prependUnicode: false, // Recommended option
+            fontName: fontName, // Name of the font
+            fontHeight: 1000,
+            formats: ['ttf', 'eot', 'woff'], // The font file formats that will be created
+            normalize: true,
+            timestamp: runTimestamp // Recommended to get consistent builds when watching files
+        }))
+        .pipe(dest('./public/fonts/iconsFont'));
+};
+exports.iconFonts = iconFonts;
 
 function buildPug() {
     return src('./src/templates/*.pug')

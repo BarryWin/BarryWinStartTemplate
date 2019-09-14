@@ -1,1 +1,13 @@
+@import "base/base";
+
+@import "utils/vars";
+@import "utils/fonts";
+
+@import "components/buttons";
+@import "components/titles";
+
+@import "layout/footer";
 @import "layout/header";
+
+
+@import "pages/index";
