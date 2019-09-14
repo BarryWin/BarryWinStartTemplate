@@ -82,7 +82,9 @@ function buildJs() {
         .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
         .pipe(changed('./src/js/**/*.js'))
         .pipe(named())
-        .pipe(webpack(require('./webpack.config')))
+        .pipe(gulpif(env === 'development',
+            webpack(require('./webpack.dev.conf')),
+            webpack(require('./webpack.build.conf'))))
         .pipe(dest('./public/js'))
 };
 exports.buildJs = buildJs;
