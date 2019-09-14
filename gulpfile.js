@@ -29,7 +29,7 @@ let env = process.env.NODE_ENV;
 
 let fontName = 'icons';
 
-function iconFonts() {
+function iconsFont() {
     return src(['src/images/iconsFont/*.svg']) // Source folder containing the SVG images
         .pipe(iconfontCss({
             fontName: fontName,
@@ -41,13 +41,14 @@ function iconFonts() {
             prependUnicode: false, // Recommended option
             fontName: fontName, // Name of the font
             fontHeight: 1000,
-            formats: ['ttf', 'eot', 'woff'], // The font file formats that will be created
             normalize: true,
+            centerHorizontally: true,
+            formats: ['ttf', 'eot', 'woff'], // The font file formats that will be created
             timestamp: runTimestamp // Recommended to get consistent builds when watching files
         }))
         .pipe(dest('./public/fonts/iconsFont'));
 };
-exports.iconFonts = iconFonts;
+exports.iconsFont = iconsFont;
 
 function buildPug() {
     return src('./src/templates/*.pug')
