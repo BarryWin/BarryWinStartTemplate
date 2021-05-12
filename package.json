@@ -33,7 +33,7 @@
     "gulp-sourcemaps": "^2.6.5",
     "imagemin-mozjpeg": "^8.0.0",
     "npm-check-updates": "^4.1.1",
-    "swiper": "^5.3.6",
+    "swiper": "^6.5.1",
     "vinyl-named": "^1.1.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
